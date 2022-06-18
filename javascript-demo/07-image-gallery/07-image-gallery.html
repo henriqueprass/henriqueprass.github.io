@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Image gallery</title>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+      h1 {
+        font-family: helvetica, arial, sans-serif;
+        text-align: center;
+      }
+      body {
+        width: 640px;
+        margin: 0 auto;
+      }
+      .full-img {
+        position: relative;
+        display: block;
+        width: 640px;
+        height: 480px;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 640px;
+        height: 480px;
+        background-color: rgba(0,0,0,0);
+      }
+      button {
+        border: 0;
+        background: rgba(150,150,150,0.6);
+        text-shadow: 1px 1px 1px white;
+        border: 1px solid #999;
+        position: absolute;
+        cursor: pointer;
+        top: 2px;
+        left: 2px;
+      }
+      .thumb-bar img {
+        display: block;
+        width: 20%;
+        float: left;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Image gallery example</h1>
+
+    <div class="full-img">
+      <img class="displayed-img" src="images/pic1.jpg">
+      <div class="overlay"></div>
+      <button class="dark">Darken</button>
+    </div>
+
+    <div class="thumb-bar">
+
+
+    </div>
+
+    <!-- <script src="main.js"></script> -->
+    <script>
+      const displayedImage = document.querySelector('.displayed-img');
+      const thumbBar = document.querySelector('.thumb-bar');
+
+      const btn = document.querySelector('button');
+      const overlay = document.querySelector('.overlay');
+
+      /* Declaring the array of image filenames */
+      const imgArray = ['images/pic1.jpg', 'images/pic2.jpg', 'images/pic3.jpg', 'images/pic4.jpg', 'images/pic5.jpg'];
+
+      /* Looping through images */
+      for (let pic of imgArray) {
+        index = imgArray.indexOf(pic);
+        xxx = imgArray[index];
+        
+        const newImage = document.createElement('img');
+        newImage.setAttribute('src', xxx);
+        thumbBar.appendChild(newImage);
+        
+        newImage.addEventListener('click', () => {
+          displayedImage.setAttribute('src', newImage.getAttribute('src'));
+        });
+      }
+
+      /* Wiring up the Darken/Lighten button */
+      btn.addEventListener('click', () => {
+        if (btn.getAttribute('class') === 'dark') {
+          btn.setAttribute('class', 'light');
+          btn.textContent = 'Lighten';
+          //let color = `rgba(0,0,0,0.5)`;
+          overlay.style.backgroundColor = `rgba(0,0,0,0.5)`; // Tem que receber como string senão ele não entende
+        } else if (btn.getAttribute('class') === 'light') {
+          btn.setAttribute('class', 'dark');
+          btn.textContent = 'Darken';
+          overlay.style.backgroundColor = `rgba(0,0,0,0)`;
+        }
+      });
+    </script>
+  </body>
+</html>
