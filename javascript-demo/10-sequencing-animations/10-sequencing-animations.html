@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+		<title>Sequencing animations</title>
+    <!-- <script type="text/javascript" src="main.js" defer></script> -->
+    <!-- <link href="style.css"rel="stylesheet"> -->
+		<style>
+			body {
+				background: #6c373f;
+				display: flex;
+				justify-content: center;
+			}
+			#alice-container {
+				width: 90vh;
+				display: grid;
+				place-items: center;
+				grid-template-areas:
+					"a1 . ."
+					". a2 ."
+					". . a3";
+			}
+			#alice1 {grid-area: a1;}
+			#alice2 {grid-area: a2;}
+			#alice3 {grid-area: a3;}
+		</style>
+  </head>
+
+  <body>
+    <div id="alice-container">
+      <img id="alice1" src="alice.svg">
+      <img id="alice2" src="alice.svg">
+      <img id="alice3" src="alice.svg">
+    </div>
+  </body>
+	
+	<script>
+		const aliceTumbling = [
+			{ transform: 'rotate(0) scale(1)' },
+			{ transform: 'rotate(360deg) scale(0)' }
+		];
+		const aliceTiming = {
+			duration: 2000,
+			iterations: 1,
+			fill: 'forwards'
+		}
+		
+		const alice1 = document.querySelector("#alice1");
+		const alice2 = document.querySelector("#alice2");
+		const alice3 = document.querySelector("#alice3");
+		
+		//let temp1 = alice1.animate(aliceTumbling, aliceTiming);
+		//let temp2 = temp1.finished;
+		//console.log(temp);
+		//console.log(temp2);
+		//temp2.then( () => alice2.animate(aliceTumbling, aliceTiming));
+		
+		/*alice1.animate(aliceTumbling, aliceTiming).finished.then( () => {
+		alice2.animate(aliceTumbling, aliceTiming).finished.then( () => {
+		alice3.animate(aliceTumbling, aliceTiming);
+		});
+		});*/
+		
+		/*alice1.animate(aliceTumbling, aliceTiming).finished
+		.then( () => {
+		  return alice2.animate(aliceTumbling, aliceTiming).finished;
+		})
+		.then( () => {
+		  alice3.animate(aliceTumbling, aliceTiming);
+		});*/
+		
+		async function playAnimations() {
+			//try {
+			  await alice1.animate(aliceTumbling, aliceTiming).finished;
+			  await alice2.animate(aliceTumbling, aliceTiming).finished;
+			//} catch {}
+			alice3.animate(aliceTumbling, aliceTiming);
+		}
+		playAnimations();
+	</script>
+</html>
