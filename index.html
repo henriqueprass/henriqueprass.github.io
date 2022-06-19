@@ -31,11 +31,11 @@
         color: #fff!important;
         background-color: #000!important;
       }
-      #home {
+      #home > div:first-child {
         display: flex;
         align-items: center;
       }
-      #home > img {
+      #home > div:first-child > img {
         float: right;
         margin-left: 30px;
         border-radius: 50%;
@@ -43,9 +43,14 @@
         width: 33%;
         /*flex: 1;*/
       }
-      #home > div {
+      #home > div:first-child > div {
         width: 66%;
         /*flex: 2;*/
+      }
+      #home > div:last-child > img {
+        border-radius: 50%;
+        width: 33%;
+        margin-top: 20px;
       }
       img[src="images/javascript-8.jpg"],
       img[src="images/javascript-9.jpg"],
@@ -93,12 +98,19 @@
     <div class="w3-padding-large" id="main">
       <!-- Header/Home -->
       <header class="w3-container w3-padding-32 w3-center w3-black w3-content" id="home">
-        <img src="images/henrique.jpg" alt="henrique" class="w3-image">
-        <div>
-          <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Henrique Prass.</h1>
-          <p>Software Developer.</p>
+        <div class="w3-hide-small">
+          <img src="images/henrique.jpg" alt="henrique" class="w3-image">
+          <div>
+            <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Henrique Prass.</h1>
+            <p>Software Developer.</p>
+          </div>
         </div>
         <!-- <img src="https://www.w3schools.com/w3images/man_smoke.jpg" alt="boy" class="w3-image" width="992" height="1108"> -->
+        <div class="w3-hide-large w3-hide-medium">
+          <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Henrique Prass.</h1>
+          <p>Software Developer.</p>
+          <img src="images/henrique.jpg" alt="henrique" class="w3-image">
+        </div>
       </header>
 
       <!-- About Section -->
@@ -221,72 +233,100 @@
         </div>
 
         <!-- Grid for javascript demos -->
-        <h3 class="w3-padding-16 w3-text-light-grey">JavaScript Demos</h3> 
-        <div class="w3-row-padding" style="margin:0 -16px">
-          <div class="w3-third">
-            <a href="javascript-demo/01-number-guessing-game.html" target="_blank"><img src="images/javascript-1.jpg" style="width:100%"></a>
-            <a href="javascript-demo/04-message-box/04-message-box.html" target="_blank"><img src="images/javascript-4.jpg" style="width:100%"></a>
-            <a href="javascript-demo/07-image-gallery/07-image-gallery.html" target="_blank"><img src="images/javascript-7.jpg" style="width:100%"></a>
-            <a href="javascript-demo/10-sequencing-animations/10-sequencing-animations.html" target="_blank"><img src="images/javascript-10.jpg" style="width:100%"></a>
-            <a href="javascript-demo/13-youtube-api.html" target="_blank"><img src="images/javascript-13.jpg" style="width:100%"></a>
-            <a href="javascript-demo/16-basic-cube/16-basic-cube.html" target="_blank"><img src="images/javascript-16.jpg" style="width:100%"></a>
-            <a href="javascript-demo/19-indexeddb-video-storage/19-indexeddb-video-storage.html" target="_blank"><img src="images/javascript-19.jpg" style="width:100%"></a>
+        <div class="w3-hide-small">
+          <h3 class="w3-padding-16 w3-text-light-grey">JavaScript Demos</h3> 
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-third">
+              <a href="javascript-demo/01-number-guessing-game.html" target="_blank"><img src="images/javascript-1.jpg" style="width:100%"></a>
+              <a href="javascript-demo/04-message-box/04-message-box.html" target="_blank"><img src="images/javascript-4.jpg" style="width:100%"></a>
+              <a href="javascript-demo/07-image-gallery/07-image-gallery.html" target="_blank"><img src="images/javascript-7.jpg" style="width:100%"></a>
+              <a href="javascript-demo/10-sequencing-animations/10-sequencing-animations.html" target="_blank"><img src="images/javascript-10.jpg" style="width:100%"></a>
+              <a href="javascript-demo/13-youtube-api.html" target="_blank"><img src="images/javascript-13.jpg" style="width:100%"></a>
+              <a href="javascript-demo/16-basic-cube/16-basic-cube.html" target="_blank"><img src="images/javascript-16.jpg" style="width:100%"></a>
+              <a href="javascript-demo/19-indexeddb-video-storage/19-indexeddb-video-storage.html" target="_blank"><img src="images/javascript-19.jpg" style="width:100%"></a>
+            </div>
+
+            <div class="w3-third">
+              <a href="javascript-demo/02-silly-story-generator.html" target="_blank"><img src="images/javascript-2.jpg" style="width:100%"></a>
+              <a href="javascript-demo/05-function-library.html" target="_blank"><img src="images/javascript-5.jpg" style="width:100%"></a>
+              <a href="javascript-demo/08-bouncing-balls.html" target="_blank"><img src="images/javascript-8.jpg" style="width:100%"></a>
+              <a href="javascript-demo/11-fetching-data/11-fetching-data.html" target="_blank"><img src="images/javascript-11.jpg" style="width:100%"></a>
+              <a href="javascript-demo/14-simple-character-animation/14-simple-character-animation.html" target="_blank"><img src="images/javascript-14.jpg" style="width:100%"></a>
+              <a href="javascript-demo/17-web-storage-personal-greeting.html" target="_blank"><img src="images/javascript-17.jpg" style="width:100%"></a>
+            </div>
+
+            <div class="w3-third">
+              <a href="javascript-demo/03-shopping-list.html" target="_blank"><img src="images/javascript-3.jpg" style="width:100%"></a>
+              <a href="javascript-demo/06-random-color.html" target="_blank"><img src="images/javascript-6.jpg" style="width:100%"></a>
+              <a href="javascript-demo/09-bouncing-balls-game.html" target="_blank"><img src="images/javascript-9.jpg" style="width:100%"></a>
+              <a href="javascript-demo/12-can-store/12-can-store.html" target="_blank"><img src="images/javascript-12.jpg" style="width:100%"></a>
+              <a href="javascript-demo/15-simple-drawing-application.html" target="_blank"><img src="images/javascript-15.jpg" style="width:100%"></a>
+              <a href="javascript-demo/18-indexeddb-note-storage.html" target="_blank"><img src="images/javascript-18.jpg" style="width:100%"></a>
+            </div>
+          <!-- End javascript demo grid -->
           </div>
 
-          <div class="w3-third">
-            <a href="javascript-demo/02-silly-story-generator.html" target="_blank"><img src="images/javascript-2.jpg" style="width:100%"></a>
-            <a href="javascript-demo/05-function-library.html" target="_blank"><img src="images/javascript-5.jpg" style="width:100%"></a>
-            <a href="javascript-demo/08-bouncing-balls.html" target="_blank"><img src="images/javascript-8.jpg" style="width:100%"></a>
-            <a href="javascript-demo/11-fetching-data/11-fetching-data.html" target="_blank"><img src="images/javascript-11.jpg" style="width:100%"></a>
-            <a href="javascript-demo/14-simple-character-animation/14-simple-character-animation.html" target="_blank"><img src="images/javascript-14.jpg" style="width:100%"></a>
-            <a href="javascript-demo/17-web-storage-personal-greeting.html" target="_blank"><img src="images/javascript-17.jpg" style="width:100%"></a>
-          </div>
+          <!-- Grid for javascript demos -->
+          <h3 class="w3-padding-16 w3-text-light-grey">JavaScript Demos</h3> 
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-quarter">
+              <a href="javascript-demo/01-number-guessing-game.html" target="_blank"><img src="images/javascript-1.jpg" style="width:100%"></a>
+              <a href="javascript-demo/05-function-library.html" target="_blank"><img src="images/javascript-5.jpg" style="width:100%"></a>
+              <a href="javascript-demo/09-bouncing-balls-game.html" target="_blank"><img src="images/javascript-9.jpg" style="width:100%"></a>
+              <a href="javascript-demo/13-youtube-api.html" target="_blank"><img src="images/javascript-13.jpg" style="width:100%"></a>
+              <a href="javascript-demo/17-web-storage-personal-greeting.html" target="_blank"><img src="images/javascript-17.jpg" style="width:100%"></a>
+            </div>
 
-          <div class="w3-third">
-            <a href="javascript-demo/03-shopping-list.html" target="_blank"><img src="images/javascript-3.jpg" style="width:100%"></a>
-            <a href="javascript-demo/06-random-color.html" target="_blank"><img src="images/javascript-6.jpg" style="width:100%"></a>
-            <a href="javascript-demo/09-bouncing-balls-game.html" target="_blank"><img src="images/javascript-9.jpg" style="width:100%"></a>
-            <a href="javascript-demo/12-can-store/12-can-store.html" target="_blank"><img src="images/javascript-12.jpg" style="width:100%"></a>
-            <a href="javascript-demo/15-simple-drawing-application.html" target="_blank"><img src="images/javascript-15.jpg" style="width:100%"></a>
-            <a href="javascript-demo/18-indexeddb-note-storage.html" target="_blank"><img src="images/javascript-18.jpg" style="width:100%"></a>
+            <div class="w3-quarter">
+              <a href="javascript-demo/02-silly-story-generator.html" target="_blank"><img src="images/javascript-2.jpg" style="width:100%"></a>
+              <a href="javascript-demo/06-random-color.html" target="_blank"><img src="images/javascript-6.jpg" style="width:100%"></a>
+              <a href="javascript-demo/10-sequencing-animations/10-sequencing-animations.html" target="_blank"><img src="images/javascript-10.jpg" style="width:100%"></a>
+              <a href="javascript-demo/14-simple-character-animation/14-simple-character-animation.html" target="_blank"><img src="images/javascript-14.jpg" style="width:100%"></a>
+              <a href="javascript-demo/18-indexeddb-note-storage.html" target="_blank"><img src="images/javascript-18.jpg" style="width:100%"></a>
+            </div>
+
+            <div class="w3-quarter">
+              <a href="javascript-demo/03-shopping-list.html" target="_blank"><img src="images/javascript-3.jpg" style="width:100%"></a>
+              <a href="javascript-demo/07-image-gallery/07-image-gallery.html" target="_blank"><img src="images/javascript-7.jpg" style="width:100%"></a>
+              <a href="javascript-demo/11-fetching-data/11-fetching-data.html" target="_blank"><img src="images/javascript-11.jpg" style="width:100%"></a>
+              <a href="javascript-demo/15-simple-drawing-application.html" target="_blank"><img src="images/javascript-15.jpg" style="width:100%"></a>
+              <a href="javascript-demo/19-indexeddb-video-storage/19-indexeddb-video-storage.html" target="_blank"><img src="images/javascript-19.jpg" style="width:100%"></a>
+            </div>
+
+            <div class="w3-quarter">
+              <a href="javascript-demo/04-message-box/04-message-box.html" target="_blank"><img src="images/javascript-4.jpg" style="width:100%"></a>
+              <a href="javascript-demo/08-bouncing-balls.html" target="_blank"><img src="images/javascript-8.jpg" style="width:100%"></a>
+              <a href="javascript-demo/12-can-store/12-can-store.html" target="_blank"><img src="images/javascript-12.jpg" style="width:100%"></a>
+              <a href="javascript-demo/16-basic-cube/16-basic-cube.html" target="_blank"><img src="images/javascript-16.jpg" style="width:100%"></a>
+            </div>
+          <!-- End javascript demo grid -->
           </div>
-        <!-- End javascript demo grid -->
         </div>
 
-        <!-- Grid for javascript demos -->
-        <h3 class="w3-padding-16 w3-text-light-grey">JavaScript Demos</h3> 
-        <div class="w3-row-padding" style="margin:0 -16px">
-          <div class="w3-quarter">
-            <a href="javascript-demo/01-number-guessing-game.html" target="_blank"><img src="images/javascript-1.jpg" style="width:100%"></a>
-            <a href="javascript-demo/05-function-library.html" target="_blank"><img src="images/javascript-5.jpg" style="width:100%"></a>
-            <a href="javascript-demo/09-bouncing-balls-game.html" target="_blank"><img src="images/javascript-9.jpg" style="width:100%"></a>
-            <a href="javascript-demo/13-youtube-api.html" target="_blank"><img src="images/javascript-13.jpg" style="width:100%"></a>
-            <a href="javascript-demo/17-web-storage-personal-greeting.html" target="_blank"><img src="images/javascript-17.jpg" style="width:100%"></a>
+        <div class="w3-hide-large w3-hide-medium">
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+              <a href="javascript-demo/01-number-guessing-game.html" target="_blank"><img src="images/javascript-1.jpg" style="width:100%"></a>
+              <a href="javascript-demo/02-silly-story-generator.html" target="_blank"><img src="images/javascript-2.jpg" style="width:100%"></a>
+              <a href="javascript-demo/03-shopping-list.html" target="_blank"><img src="images/javascript-3.jpg" style="width:100%"></a>
+              <a href="javascript-demo/04-message-box/04-message-box.html" target="_blank"><img src="images/javascript-4.jpg" style="width:100%"></a>
+              <a href="javascript-demo/05-function-library.html" target="_blank"><img src="images/javascript-5.jpg" style="width:100%"></a>
+              <a href="javascript-demo/06-random-color.html" target="_blank"><img src="images/javascript-6.jpg" style="width:100%"></a>
+              <a href="javascript-demo/07-image-gallery/07-image-gallery.html" target="_blank"><img src="images/javascript-7.jpg" style="width:100%"></a>
+              <a href="javascript-demo/08-bouncing-balls.html" target="_blank"><img src="images/javascript-8.jpg" style="width:100%"></a>
+              <a href="javascript-demo/09-bouncing-balls-game.html" target="_blank"><img src="images/javascript-9.jpg" style="width:100%"></a>
+              <a href="javascript-demo/10-sequencing-animations/10-sequencing-animations.html" target="_blank"><img src="images/javascript-10.jpg" style="width:100%"></a>
+              <a href="javascript-demo/11-fetching-data/11-fetching-data.html" target="_blank"><img src="images/javascript-11.jpg" style="width:100%"></a>
+              <a href="javascript-demo/12-can-store/12-can-store.html" target="_blank"><img src="images/javascript-12.jpg" style="width:100%"></a>
+              <a href="javascript-demo/13-youtube-api.html" target="_blank"><img src="images/javascript-13.jpg" style="width:100%"></a>
+              <a href="javascript-demo/14-simple-character-animation/14-simple-character-animation.html" target="_blank"><img src="images/javascript-14.jpg" style="width:100%"></a>
+              <a href="javascript-demo/15-simple-drawing-application.html" target="_blank"><img src="images/javascript-15.jpg" style="width:100%"></a>
+              <a href="javascript-demo/16-basic-cube/16-basic-cube.html" target="_blank"><img src="images/javascript-16.jpg" style="width:100%"></a>
+              <a href="javascript-demo/17-web-storage-personal-greeting.html" target="_blank"><img src="images/javascript-17.jpg" style="width:100%"></a>
+              <a href="javascript-demo/18-indexeddb-note-storage.html" target="_blank"><img src="images/javascript-18.jpg" style="width:100%"></a>
+              <a href="javascript-demo/19-indexeddb-video-storage/19-indexeddb-video-storage.html" target="_blank"><img src="images/javascript-19.jpg" style="width:100%"></a>
+            </div>
           </div>
-
-          <div class="w3-quarter">
-            <a href="javascript-demo/02-silly-story-generator.html" target="_blank"><img src="images/javascript-2.jpg" style="width:100%"></a>
-            <a href="javascript-demo/06-random-color.html" target="_blank"><img src="images/javascript-6.jpg" style="width:100%"></a>
-            <a href="javascript-demo/10-sequencing-animations/10-sequencing-animations.html" target="_blank"><img src="images/javascript-10.jpg" style="width:100%"></a>
-            <a href="javascript-demo/14-simple-character-animation/14-simple-character-animation.html" target="_blank"><img src="images/javascript-14.jpg" style="width:100%"></a>
-            <a href="javascript-demo/18-indexeddb-note-storage.html" target="_blank"><img src="images/javascript-18.jpg" style="width:100%"></a>
-          </div>
-
-          <div class="w3-quarter">
-            <a href="javascript-demo/03-shopping-list.html" target="_blank"><img src="images/javascript-3.jpg" style="width:100%"></a>
-            <a href="javascript-demo/07-image-gallery/07-image-gallery.html" target="_blank"><img src="images/javascript-7.jpg" style="width:100%"></a>
-            <a href="javascript-demo/11-fetching-data/11-fetching-data.html" target="_blank"><img src="images/javascript-11.jpg" style="width:100%"></a>
-            <a href="javascript-demo/15-simple-drawing-application.html" target="_blank"><img src="images/javascript-15.jpg" style="width:100%"></a>
-            <a href="javascript-demo/19-indexeddb-video-storage/19-indexeddb-video-storage.html" target="_blank"><img src="images/javascript-19.jpg" style="width:100%"></a>
-          </div>
-
-          <div class="w3-quarter">
-            <a href="javascript-demo/04-message-box/04-message-box.html" target="_blank"><img src="images/javascript-4.jpg" style="width:100%"></a>
-            <a href="javascript-demo/08-bouncing-balls.html" target="_blank"><img src="images/javascript-8.jpg" style="width:100%"></a>
-            <a href="javascript-demo/12-can-store/12-can-store.html" target="_blank"><img src="images/javascript-12.jpg" style="width:100%"></a>
-            <a href="javascript-demo/16-basic-cube/16-basic-cube.html" target="_blank"><img src="images/javascript-16.jpg" style="width:100%"></a>
-          </div>
-        <!-- End javascript demo grid -->
         </div>
       <!-- End Portfolio Section -->
       </div>
